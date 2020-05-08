@@ -18,27 +18,36 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "CEO"
-  company = "GenCoin"
+  title = "Geospatial Analyst"
+  company = "Dunedin City Council"
   company_url = ""
-  location = "California"
-  date_start = "2017-01-01"
+  location = "Dunedin, New Zealand"
+  date_start = "2018-08-01"
   date_end = ""
   description = """
   Responsibilities include:
   
-  * Analysing
-  * Modelling
-  * Deploying
+  * Geospatial product development
+  * Designing machine learning tools
+  * Data visualisation
   """
 
 [[experience]]
-  title = "Professor"
-  company = "University X"
-  company_url = ""
-  location = "California"
-  date_start = "2016-01-01"
-  date_end = "2016-12-31"
-  description = """Taught electronic engineering and researched semiconductor physics."""
+  title = "Postdoctoral Researcher"
+  company = "University of Otago, School of Surveying"
+  company_url = "https://www.otago.ac.nz/surveying/index.html"
+  location = "Dunedin, New Zealand"
+  date_start = "2015-09-01"
+  date_end = "2018-08-01"
+  description = """Developed a new multivariate statistical analysis method for interpreting present-day changes to Antarctica’s ice shelves.  This method combined computational models with geospatial-time series data to create statistical fingerprints for ice shelf events, which correctly identified the timing and magnitude of past known events.  Model used to forecast next 300 years of ice shelf evolution."""
+  
+[[experience]]
+  title = "Postdoctoral/Graduate Researcher"
+  company = "University of Washington, Department of Earth and Space Science"
+  company_url = "https://www.ess.washington.edu/"
+  location = "Seattle, Washington, USA"
+  date_start = "2009-09-01"
+  date_end = "2015-09-01"
+  description = """Developed computational models and analysed data using a variety of statistical approaches on 4 major projects, responsible of managing research databases."""
 
 +++
