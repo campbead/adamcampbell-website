@@ -4,12 +4,20 @@ author: Adam J Campbell
 date: 2020-05-20
 output: html_document
 draft: True
-summary: test for reactable
+summary: Population density is easy to calculate, but sometimes misleading.  Is there a better way?
 ---
 
-Population density 
+Recently, it has been argued that New Zealand's success with dealing with Covid-19 has been due, in part, to its low population density with around 17.7 people per square kilometer.  If this population density were compared to US states, then New Zealand would down rank toward the bottom in terms of population density.  However population density, as it is normally calculated is not necessarily the best representation of how packed or densely people live in a region, state, or nation.
+
+## Pinksvile and Bluetopia
+
+Let's start by considering two hypothetical cities: Pinksville and Bluetopia.  Both cities are exactly 25 square-kilometers in area, and both cites have 25 residents.  Therefore with a traditional measure of population density, where the total population is divided by the total area, these cities and indistinguishable.  However, if you take a closer look at figure below you'll notice these cities are quite different in their population structure.  
 
 ![](/img/popdensity.png)
+
+
+
+
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(reactable)
