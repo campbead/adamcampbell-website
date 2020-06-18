@@ -18,13 +18,14 @@ organizations:
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: I'm Geospatial Data Analyst interest in statistical problem solving, machine learning, and deep learning.
+bio: I'm Geospatial Data Analyst interested in data visualization, statistical problem solving, and data storytelling.
 
 interests:
-- Artificial Intelligence
-- Physics
+- Data Visualization
+- Storytelling
 - Statistics
 - Geography
+- Artificial Intelligence
 
 education:
   courses:
@@ -74,5 +75,5 @@ user_groups:
 - Visitors
 ---
 
-I am a geospatial data analyst interested solving problems that are spatial in nature.  I use statistical and machine learning technique.  I focus on data visualisations and storytelling.
+I am a geospatial data analyst interested solving problems that are spatial in nature.  I use statistical techiniques to focus on data visualizations and storytelling.
 
