@@ -13,14 +13,13 @@ I was recently attempting to scrape a table from [Wikipedia](https://en.wikipedi
 blogdown::shortcode('tweet', '951639629182074880')
 ```
 
-However there are two problems with this
+However this tweet is specific only to the example, I want to generalize the code for any Wikipedia table.
 
-1. the tag for table has changed. and it may change in the future since Wikipedia a living document.
-2. if you want to use this on other tables in Wikipedia, it's not entirely obvious, what you need to change.
-
-I'm going to show how to address both these problems using Firefox browser, although I'm sure this could be adapted to other browsers.  
+I'm going to show you to scrape any Wikipedia table using Firefox browser and R (of course), although I'm sure this could be adapted to other browsers.  
 
 I'll show how to change the above code into a code to scrape the table I was interested in, which was the [attendance size of Trump's rallies](https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign).  Here, I'd like to scrape the `Primary rallies (June 2015–June 2016) ` table.
+
+![](/img/Wiki_trump_rallies.png)
 
 The first thing to change is the `read_html()` line:
 

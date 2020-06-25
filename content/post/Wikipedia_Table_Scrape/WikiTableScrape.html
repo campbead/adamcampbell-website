@@ -11,13 +11,10 @@ summary: A quick how-to guide on scraping tables from wikipedia, using R.
 
 <p>I was recently attempting to scrape a table from <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>. I was responding to a group chat and wanted to make a quick histogram (something I love about R and ggplot). In my search, I came across this helpful tweet from <a href="https://twitter.com/juliasilge">Julia Silge</a>:</p>
 {{% tweet "951639629182074880" %}}
-<p>However there are two problems with this</p>
-<ol style="list-style-type: decimal">
-<li>the tag for table has changed. and it may change in the future since Wikipedia a living document.</li>
-<li>if you want to use this on other tables in Wikipedia, it’s not entirely obvious, what you need to change.</li>
-</ol>
-<p>I’m going to show how to address both these problems using Firefox browser, although I’m sure this could be adapted to other browsers.</p>
+<p>However this tweet is specific only to the example, I want to generalize the code for any Wikipedia table.</p>
+<p>I’m going to show you to scrape any Wikipedia table using Firefox browser and R (of course), although I’m sure this could be adapted to other browsers.</p>
 <p>I’ll show how to change the above code into a code to scrape the table I was interested in, which was the <a href="https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign">attendance size of Trump’s rallies</a>. Here, I’d like to scrape the <code>Primary rallies (June 2015–June 2016)</code> table.</p>
+<p><img src="/img/Wiki_trump_rallies.png" /></p>
 <p>The first thing to change is the <code>read_html()</code> line:</p>
 <p><code>read_html("https://en.wikipedia.org/wiki/Current_members_of_the_United_States_House_of_Representatives")</code></p>
 <p>all we need to here is update the hyperlink by copying the web address of the wikipedia page:</p>
