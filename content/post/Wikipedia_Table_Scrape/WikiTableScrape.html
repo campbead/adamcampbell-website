@@ -9,31 +9,33 @@ summary: A quick how-to guide on scraping tables from wikipedia, using R.
 
 
 
-<p>I was recently attempting to scrape a table from <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>. I wanted something very quick since I was responding to a group chat and wanted to make a quick histogram (something I love about R and ggplot). I came across this tweet from <a href="https://twitter.com/juliasilge">Julia Silge</a>:</p>
+<p>I was recently attempting to scrape a table from <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>. I was responding to a group chat and wanted to make a quick histogram (something I love about R and ggplot). In my search, I came across this helpful tweet from <a href="https://twitter.com/juliasilge">Julia Silge</a>:</p>
 {{% tweet "951639629182074880" %}}
 <p>However there are two problems with this</p>
 <ol style="list-style-type: decimal">
 <li>the tag for table has changed. and it may change in the future since Wikipedia a living document.</li>
 <li>if you want to use this on other tables in Wikipedia, it’s not entirely obvious, what you need to change.</li>
 </ol>
-<p>Problem 1 was address by <a href="https://twitter.com/TheBishop">David Bishop</a> in this tweet:
-{{% tweet "1024040452230664192" %}}</p>
-<p>For problem 2, I’ll show you how to change the above code into a code to scrape the table I was interested in, which was the <a href="https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign">attendance size of Trump’s rallies</a>. Here, I’d like to scrape the <code>Primary rallies (June 2015–June 2016)</code> table.</p>
+<p>I’m going to show how to address both these problems using Firefox browser, although I’m sure this could be adapted to other browsers.</p>
+<p>I’ll show how to change the above code into a code to scrape the table I was interested in, which was the <a href="https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign">attendance size of Trump’s rallies</a>. Here, I’d like to scrape the <code>Primary rallies (June 2015–June 2016)</code> table.</p>
 <p>The first thing to change is the <code>read_html()</code> line:</p>
 <p><code>read_html("https://en.wikipedia.org/wiki/Current_members_of_the_United_States_House_of_Representatives")</code></p>
-<p>all we need to here is update the hyperlink:</p>
+<p>all we need to here is update the hyperlink by copying the web address of the wikipedia page:</p>
 <p><code>read_html("https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign")</code></p>
-<p>The next thing you’ll have to change is the <code>html_node()</code> line. To this this you’ll have to know the tag of the table in the html code. To find this you’ll have to <a href="https://www.lifewire.com/get-inspect-element-tool-for-browser-756549">inspect the html code</a> of the wikipedia page you’re looking at.</p>
-<p>Inspect the table you’re interested in and you’ll see a line starting <code>&lt;table class= ...</code>
-Right click on that line and select <code>Copy</code> -&gt; <code>CSS Selector</code></p>
-<p>In my case this returns:
-<code>table.wikitable:nth-child(17)</code></p>
-<p>You can then update the <code>html_node</code> line by c</p>
+<p>The next thing to change is the <code>html_node()</code> line. For this this you’ll have to know the tag of the table in the html code. To find this you’ll have to <a href="https://www.lifewire.com/get-inspect-element-tool-for-browser-756549">inspect the html code</a> of the wikipedia page you’re looking at.</p>
+<p>Inspect the table you’re interested in and you’ll see a line starting <code>&lt;table class= ...</code></p>
+<p><img src="/img/wikitable_example.png" /></p>
+<p>Right click on that line and select <code>Copy</code> -&gt; <code>XPath</code></p>
+<p><img src="/img/copy_xcode.png" /></p>
+<p>then update the with <code>html_node</code> line, using the <code>xpath</code> flag:</p>
+<p><code>html_node(xpath = '/html/body/div[3]/div[3]/div[4]/div/table[2]')</code></p>
+<p>The end result should look like this:</p>
 <pre class="r"><code>library(tidyverse)
 library(rvest)
 h &lt;- read_html(&quot;https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign&quot;)
 
 rallies &lt;- h %&gt;%
-    html_node(&quot;#mw-content-text &gt; div &gt; table:nth-child(17)&quot;) %&gt;%
-    #html_node(&quot;table#votingmembers&quot;) %&gt;%
-    html_table()</code></pre>
+    html_node(xpath = &#39;/html/body/div[3]/div[3]/div[4]/div/table[2]&#39;) %&gt;%
+    html_table() %&gt;%
+    as_tibble()</code></pre>
+<p>I hope this helps you quickly scrape Wikipedia tables.</p>

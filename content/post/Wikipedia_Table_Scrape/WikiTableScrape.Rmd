@@ -7,7 +7,7 @@ draft: True
 summary: A quick how-to guide on scraping tables from wikipedia, using R.
 ---
 
-I was recently attempting to scrape a table from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page).  I wanted something very quick since I was responding to a group chat and wanted to make a quick histogram (something I love about R and ggplot).  I came across this tweet from [Julia Silge](https://twitter.com/juliasilge):
+I was recently attempting to scrape a table from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page).  I was responding to a group chat and wanted to make a quick histogram (something I love about R and ggplot).  In my search, I came across this helpful tweet from [Julia Silge](https://twitter.com/juliasilge):
 
 ```{r echo=FALSE}
 blogdown::shortcode('tweet', '951639629182074880')
@@ -18,39 +18,45 @@ However there are two problems with this
 1. the tag for table has changed. and it may change in the future since Wikipedia a living document.
 2. if you want to use this on other tables in Wikipedia, it's not entirely obvious, what you need to change.
 
-Problem 1 was address by [David Bishop](https://twitter.com/TheBishop) in this tweet:
-```{r echo=FALSE}
-blogdown::shortcode('tweet', '1024040452230664192')
-```
+I'm going to show how to address both these problems using Firefox browser, although I'm sure this could be adapted to other browsers.  
 
-For problem 2, I'll show you how to change the above code into a code to scrape the table I was interested in, which was the [attendance size of Trump's rallies](https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign).  Here, I'd like to scrape the `Primary rallies (June 2015–June 2016) ` table.
+I'll show how to change the above code into a code to scrape the table I was interested in, which was the [attendance size of Trump's rallies](https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign).  Here, I'd like to scrape the `Primary rallies (June 2015–June 2016) ` table.
 
 The first thing to change is the `read_html()` line:
 
 `read_html("https://en.wikipedia.org/wiki/Current_members_of_the_United_States_House_of_Representatives")`
 
-all we need to here is update the hyperlink:
+all we need to here is update the hyperlink by copying the web address of the wikipedia page:
 
 `read_html("https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign")`
 
-The next thing you'll have to change is the `html_node()` line.  To this this you'll have to know the tag of the table in the html code.  To find this you'll have to [inspect the html code](https://www.lifewire.com/get-inspect-element-tool-for-browser-756549) of the wikipedia page you're looking at.
+The next thing to change is the `html_node()` line.  For this this you'll have to know the tag of the table in the html code.  To find this you'll have to [inspect the html code](https://www.lifewire.com/get-inspect-element-tool-for-browser-756549) of the wikipedia page you're looking at.
 
 Inspect the table you're interested in and you'll see a line starting `<table class= ...`
-Right click on that line and select `Copy` -> `CSS Selector`
 
-In my case this returns:
-`table.wikitable:nth-child(17)`
+![](/img/wikitable_example.png)
 
-You can then update the `html_node` line by c 
+Right click on that line and select `Copy` -> `XPath`
 
+![](/img/copy_xcode.png)
+
+
+then update the with `html_node` line, using the `xpath` flag:
+
+`html_node(xpath = '/html/body/div[3]/div[3]/div[4]/div/table[2]')`
+
+
+The end result should look like this:
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(rvest)
 h <- read_html("https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign")
 
 rallies <- h %>%
-    html_node("#mw-content-text > div > table:nth-child(17)") %>%
-    #html_node("table#votingmembers") %>%
-    html_table()
+    html_node(xpath = '/html/body/div[3]/div[3]/div[4]/div/table[2]') %>%
+    html_table() %>%
+    as_tibble()
 
 ```
+
+I hope this helps you quickly scrape Wikipedia tables.
