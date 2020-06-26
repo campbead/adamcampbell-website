@@ -7,7 +7,7 @@ draft: False
 summary: Population density is easy to calculate, but sometimes misleading.  Is there a better way?
 ---
 
-Recently, it has been argued that New Zealand's success with dealing with Covid-19 has been due, in part, to its low population density.  New Zealand's population density is around 17.7 people per square kilometer, but just how dense is that number?  If New Zealand's population density were compared to US states, then New Zealand would down rank toward the bottom in terms of population density.  However population density, as it is normally calculated is not necessarily the best representation of how packed or densely people live in a region, state, or nation. In fact, the average person in New Zealand lives in a place with a population density of 425.4 people per square kilometer.  This measure of density, called a  [lived density](https://www.citylab.com/life/2018/02/theres-a-better-way-to-measure-population-density/552815/) is a better metric to evaluate population density.
+Recently, it has been argued that New Zealand's success with dealing with Covid-19 has been due, in part, to its low population density.  New Zealand's population density is around 17.7 people per square kilometer, but just how dense is that number?  If New Zealand's population density were compared to US states, New Zealand would down rank toward the bottom in terms of population density.  However population density, as it is normally calculated is not necessarily the best representation of densely people live in a region, state, or nation. In fact, the average person in New Zealand lives in a place with a population density of 425.4 people per square kilometer.  This measure of density, called a  [lived density](https://www.citylab.com/life/2018/02/theres-a-better-way-to-measure-population-density/552815/) is a better metric to evaluate population density.
 
 
 ## Lived density over population density
@@ -18,7 +18,7 @@ Lived density is the population density experienced by the average person in the
 blogdown::shortcode('tweet', '1200500226177433600')
 ```
 
-I plan on going into detail on this a future blog plot, in the meantime I've made the [source code available for this calculation](https://github.com/campbead/Urbanization_NZ). 
+I plan on going into detail on this a future post, in the meantime I've made the [source code available for this calculation](https://github.com/campbead/Urbanization_NZ). 
 
 ## Pinksvile and Bluetopia
 
@@ -27,7 +27,7 @@ Let's start by considering two hypothetical cities: Pinksville and Bluetopia.  B
 ### Population distributions for Pinksville and Bluetopia
 ![](/img/popdensity.png)
 
-In Pinksville, people are very spread apart and indeed in every single square-kilometer of Pinksville, resides exactly one person.  This stands in contrast to Bluetopia, where the entire population lives in a 4 square-kilometer corner of the city, while the remainder of the city is uninhabited.  It turns out that cities, states and countries have population distributions that resemble Bluetopia where people live in clusters more then they represent Pinksville where everyone is smoothly distributed.  Lived density is a better measure because it represents the density for which most people experience.
+In Pinksville, people are very spread apart - indeed in every single square-kilometer of Pinksville, resides exactly one person.  This stands in contrast to Bluetopia, where the entire population lives in a 4 square-kilometer corner of the city, while the remainder of the city is uninhabited.  It turns out that cities, states and countries have population distributions that resemble Bluetopia where people live in clusters more then they represent Pinksville where everyone is smoothly distributed.  Lived density is a better measure because it represents the density for which most people experience.
 
 ## How New Zealand ranks
 
