@@ -22,12 +22,12 @@ I plan on going into detail on this a future blog plot, in the meantime I've mad
 
 ## Pinksvile and Bluetopia
 
-Let's start by considering two hypothetical cities: Pinksville and Bluetopia.  Both cities are exactly 25 square-kilometers in area, and both cites have 25 residents.  Using a traditional measure of population density, where the total population is divided by the total area, these cities and indistinguishable.  However, if you take a closer look at figure below you'll notice these cities are quite different in their population structure.  
+Let's start by considering two hypothetical cities: Pinksville and Bluetopia.  Both cities are exactly 25 square-kilometers in area, and both cites have 25 residents.  Using a traditional measure of population density, where the total population is divided by the total area, these cities are indistinguishable.  However, if you take a closer look at figure below you'll notice these cities are quite different in their population structure.  
 
 ### Population distributions for Pinksville and Bluetopia
 ![](/img/popdensity.png)
 
-In Pinksville, people are very spread apart and indeed in every in every single square-kilometer of Pinksville, resides exactly one person.  This stands in contrast to Bluetopia, where the entire population lives in a 4 square-kilometer corner of the city, while the remainder of the city is uninhabited.  It turns out that cities, states and countries have population distributions that resemble Bluetopia where people live in clusters more then they represent Pinksville where everyone is smoothly distributed.  Lived density is a better measure because it represents the density for which most people experience.
+In Pinksville, people are very spread apart and indeed in every single square-kilometer of Pinksville, resides exactly one person.  This stands in contrast to Bluetopia, where the entire population lives in a 4 square-kilometer corner of the city, while the remainder of the city is uninhabited.  It turns out that cities, states and countries have population distributions that resemble Bluetopia where people live in clusters more then they represent Pinksville where everyone is smoothly distributed.  Lived density is a better measure because it represents the density for which most people experience.
 
 ## How New Zealand ranks
 
@@ -166,7 +166,7 @@ reactable(
 ```
 *areas are in km^2^ and densities are in people/km^2^, Ratio is lived density divided by population density.
 
-By inspecting the ratio between the lived density and population density, some states stand out.  Alaska has a lived density that is over one hundred times it population density.  At the other end, Vermont only has a lived density of  just over twice it's population density.  It's worth noting that the this ratio can never be less than one.  A ratio of one would mean the population is perfectly spread out of over the state, like the Pinksville example.
+By inspecting the ratio between the lived density and population density, some states stand out.  Alaska has a lived density that is over one hundred times its population density.  At the other end, Vermont only has a lived density just over twice its population density.  It's worth noting that the this ratio can never be less than one.  A ratio of one would mean the population is perfectly spread out of over the state, like the Pinksville example.
 
 ### Ranking states by density vs lived density
 
@@ -184,7 +184,7 @@ This density factor gives a measure of how clustered the population is versus ho
 
 ### Takeaways
 
-- Lived density is a better way of computing population density when what you care about is how many people does the average person live near.  Which is probably the case for modeling disease spread.
+- Lived density is a better way of computing population density when what you care about is how many people the average person lives near.  Which is probably the case for modeling disease spread.
 
 - If New Zealand were a US State it would rank near the middle in terms of lived density and near the bottom in terms of population density.
 
