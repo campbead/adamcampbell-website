@@ -4,28 +4,29 @@ author: "Adam J Campbell"
 date: 2020-06-23
 output: html_document
 draft: True
-summary: A quick how-to guide on scraping tables from wikipedia, using R.
+summary: A quick how-to guide on scraping tables from Wikipedia, using R.
 ---
 
 
 
-<p>I was recently attempting to scrape a table from <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>. I was responding to a group chat and wanted to make a quick histogram (something I love about R and ggplot). In my search, I came across this helpful tweet from <a href="https://twitter.com/juliasilge">Julia Silge</a>:</p>
+<p>Want to know how get data from a <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> table into your R script? Look no further.</p>
+<p>I was recently attempting to scrape a table from Wikipedia. I was responding to a group chat and wanted to make a quick histogram (something I love about R and ggplot). In my search, I came across this very helpful tweet from <a href="https://twitter.com/juliasilge">Julia Silge</a>:</p>
 {{% tweet "951639629182074880" %}}
-<p>However this tweet is specific only to the example, I want to generalize the code for any Wikipedia table.</p>
-<p>I’m going to show you to scrape any Wikipedia table using Firefox browser and R (of course), although I’m sure this could be adapted to other browsers.</p>
+<p>This is great piece of quick code to scrape the data from the table. However this tweet is specific only to the example, and I want to generalize the code for any Wikipedia table.</p>
+<p>I’m going to show you to scrape data from any Wikipedia table using Firefox browser and R (of course), although I’m sure this could be adapted to other browsers.</p>
 <p>I’ll show how to change the above code into a code to scrape the table I was interested in, which was the <a href="https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign">attendance size of Trump’s rallies</a>. Here, I’d like to scrape the <code>Primary rallies (June 2015–June 2016)</code> table.</p>
 <p><img src="/img/Wiki_trump_rallies.png" /></p>
 <p>The first thing to change is the <code>read_html()</code> line:</p>
-<p><code>read_html("https://en.wikipedia.org/wiki/Current_members_of_the_United_States_House_of_Representatives")</code></p>
+<pre><code>read_html(&quot;https://en.wikipedia.org/wiki/Current_members_of_the_United_States_House_of_Representatives&quot;)</code></pre>
 <p>all we need to here is update the hyperlink by copying the web address of the wikipedia page:</p>
-<p><code>read_html("https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign")</code></p>
+<pre><code>read_html(&quot;https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign&quot;)</code></pre>
 <p>The next thing to change is the <code>html_node()</code> line. For this this you’ll have to know the tag of the table in the html code. To find this you’ll have to <a href="https://www.lifewire.com/get-inspect-element-tool-for-browser-756549">inspect the html code</a> of the wikipedia page you’re looking at.</p>
 <p>Inspect the table you’re interested in and you’ll see a line starting <code>&lt;table class= ...</code></p>
 <p><img src="/img/wikitable_example.png" /></p>
 <p>Right click on that line and select <code>Copy</code> -&gt; <code>XPath</code></p>
 <p><img src="/img/copy_xcode.png" /></p>
 <p>then update the with <code>html_node</code> line, using the <code>xpath</code> flag:</p>
-<p><code>html_node(xpath = '/html/body/div[3]/div[3]/div[4]/div/table[2]')</code></p>
+<pre><code>html_node(xpath = &#39;/html/body/div[3]/div[3]/div[4]/div/table[2]&#39;)</code></pre>
 <p>The end result should look like this:</p>
 <pre class="r"><code>library(tidyverse)
 library(rvest)
@@ -35,4 +36,4 @@ rallies &lt;- h %&gt;%
     html_node(xpath = &#39;/html/body/div[3]/div[3]/div[4]/div/table[2]&#39;) %&gt;%
     html_table() %&gt;%
     as_tibble()</code></pre>
-<p>I hope this helps you quickly scrape Wikipedia tables.</p>
+<p>I hope this helps you quickly scrape any Wikipedia tables. Any improvements or suggestions? Comment down below.</p>
