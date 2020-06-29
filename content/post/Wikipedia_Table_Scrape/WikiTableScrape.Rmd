@@ -3,7 +3,7 @@ title: "Scraping Wikpedia Tables"
 author: "Adam J Campbell"
 date: 2020-06-23
 output: html_document
-draft: True
+draft: False
 summary: A quick how-to guide on scraping tables from Wikipedia, using R.
 ---
 
