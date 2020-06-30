@@ -1,0 +1,13 @@
+---
+title: Hemispheres
+author: Adam J Campbell
+date: 2020-06-28
+output: html_document
+draft: True
+summary: tbd
+---
+
+![](/img/one_hundred_slices.png)
+
+
+![](/img/hemisphere_dist.png)
