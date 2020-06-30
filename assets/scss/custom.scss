@@ -1,0 +1,26 @@
+// Override this file to add your own SCSS styling.
+ .navbar {
+  height: 70px;
+  background: $sta-menu-primary;
+/* this is the part that takes out the shadow & the only edit */
+  box-shadow: none;
+  font-size: 18px;
+  font-weight: 900 !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  padding: 0 1rem;
+ }
+
+body{
+  text-shadow: 0 0 5px pink;
+}
+
+// helpful stuff
+//https://isabella-b.com/blog/hugo-academic-customization/#full-list-of-theme-colors-you-can-customize
+// https://stackoverflow.com/questions/40812083/css-text-shadow-color
+//https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode
+//https://coolors.co/palettes/trending/violet
+//https://coolors.co/f72585-7209b7-3a0ca3-4361ee-4cc9f0
