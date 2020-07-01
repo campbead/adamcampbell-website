@@ -14,9 +14,28 @@
   padding: 0 1rem;
  }
 
-body{
-  text-shadow: 0 0 5px pink;
+.dark .experience .text-muted{
+  text-shadow: 0 0 2px #000, 0 0 10px #fc1f2c75, 0 0 5px #fc1f2c75, 0 0 25px #fc1f2c75
 }
+
+
+.navbar-brand{
+  text-shadow: 0 0 2px #100c0f, 0 0 5px #dc078e33, 0 0 10px #fff3
+}
+
+a{
+  text-shadow: 0 0 2px #393a33, 0 0 8px #f39f0575, 0 0 2px #f39f0575
+}
+.nav-link.active{
+  text-shadow: 0 0 2px #100c0f, 0 0 5px #dc078e33, 0 0 10px #fff3
+}
+
+.nav-link{
+  text-shadow: 0 0 2px #001716, 0 0 3px #03edf975, 0 0 5px #03edf975, 0 0 8px #03edf975
+}
+
+
+
 
 // helpful stuff
 //https://isabella-b.com/blog/hugo-academic-customization/#full-list-of-theme-colors-you-can-customize

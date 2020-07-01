@@ -1,0 +1,35 @@
+# Theme metadata
+name = "vice_city_dark"
+
+# Is theme light or dark?
+light = false
+
+# Primary
+primary = "#fff5f6" #"Number"
+
+# Menu
+menu_primary = "#232530" #262335"
+menu_text = "#fdfdfd"
+menu_text_active = "#f92aad"
+menu_title = "#f92aad"
+
+# Backgrounds
+background = "#262335"
+home_section_odd = "#232530"
+home_section_even = "#232530"
+
+dark_background = "#262335"
+dark_home_section_odd = "#262335"
+dark_home_section_even = "#262335"
+
+link = "#f4eee4"
+link_hover = "#b68d4b"
+
+
+#{"French Violet":"6f2dbd",
+#"Amethyst":"a663cc",
+#"Wisteria":"b298dc",
+#"Beau Blue":"b8d0eb",
+#"Celeste":"b9faf8"}
+
+
