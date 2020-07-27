@@ -3,7 +3,7 @@ title: How Dunedin Gets to Work
 author: Adam J Campbell
 date: 2020-07-24
 output: html_document
-draft: True
+draft: False
 summary: My submission for Stats NZ's There and Back Again data visualisation competition
 image:
   placement: 1
