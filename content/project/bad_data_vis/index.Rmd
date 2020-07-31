@@ -1,0 +1,18 @@
+---
+title: "Bad datavis"
+author: Adam J Campbell
+date: 2020-07-31
+output: html_document
+draft: True
+summary: Ongoing examples of bad data visualisations
+---
+
+## introduction
+This is an ongoing project to highlight examples of bad data visualations in popular media.
+
+### shrinking money
+
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1288930647965196290')
+```
+Found from a [Washington Post article](https://www.washingtonpost.com/business/2020/07/30/gdp-q2-coronavirus/) for which they have already changed the lead image.  
