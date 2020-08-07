@@ -5,6 +5,7 @@ date: 2020-07-24
 output: html_document
 draft: False
 summary: My submission for Stats NZ's There and Back Again data visualisation competition
+tags: [rstats, sf, leaflet, shiny, commuting, Dunedin, New Zealand] 
 image:
   placement: 1
   caption: "How Dunedin Gets to Work App"
