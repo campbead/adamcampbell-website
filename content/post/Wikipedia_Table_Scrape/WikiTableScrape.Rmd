@@ -62,10 +62,9 @@ library(rvest)
 h <- read_html("https://en.wikipedia.org/wiki/List_of_rallies_for_the_2016_Donald_Trump_presidential_campaign")
 
 rallies <- h %>%
-    html_node(xpath = '/html/body/div[3]/div[3]/div[4]/div/table[2]') %>%
+    html_node(xpath = '/html/body/div[3]/div[3]/div[5]/div[1]/table[2]') %>%
     html_table() %>%
     as_tibble()
-
 ```
 
 I hope this helps you quickly scrape any Wikipedia tables.  Any improvements or suggestions?  Comment down below.
