@@ -8,11 +8,29 @@ draft: True
 tags: [beer, homebrewing, precision, error propagation]
 ---
 
-I make beer as a hobby.  It's something I've been doing for over a decade and throughout the years my beer has improved dramatically.  One thing that I really like about beer making is the mathematical detail involved.  Recipes are precise to reach certain targets.  There are thousands of different ingredients and just as may different ways to use them. 
+I make beer as a hobby.  It's something I've been doing for over a decade and throughout the years my beer has improved dramatically.  One thing that I really like about beer making is the mathematical detail involved.  Recipes are precise to reach certain targets.  There are thousands of different ingredients and just as many different ways to use them. 
+
+The most frequent question about my beer is: *how much alcohol is in it?* The alcohol percentage, or Alcohol by Volume (ABV) is given by:
+
+$ABV = 131 \cdot (OG - FG)$, 
+
+where (OG) represents Original Gravity and (FG) represents Final (or Terminal) Gravity.  This is a very handy formula and is widely available on homebrewing forums and websites.  However, I have never come across discussion or calculation of the uncertainty in this calculation.  When I say uncertainty I mean the mathematical version the involves knowing how precisely you know something.
+
+## The short answer
+
+If you use a hydrometer to measure both OG and FG, then your ABV precision is $\pm$ 0.4%.  For example, if you measure an OG of 1.046 and an FG of 1.010, then your beer's ABV is 4.7% $\pm$ 0.4%. 
+
+If you use a refractometer to measure OG and a hydrometer to measure FG, then your ABV precision is $\pm$ 0.3%.  For example, if you measure an OG of 1.051 and an FG of 1.012, then your beer's ABV is 5.1% $\pm$ 0.3%. 
 
 
+## The long-mathy answer
 
-$$ABV = 131 (OG - FG)$$
+-refractormeter and hydrometer precision
+
+- error propagation
+
+$\delta ABV = 131 \cdot \sqrt{\delta OG^2 + \delta FG^2} = 131 \sqrt{2} \cdot \delta SG$
+
 
 
 
