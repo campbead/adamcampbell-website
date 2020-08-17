@@ -4,7 +4,7 @@ author: Adam J Campbell
 date: 2020-08-10
 output: 
   html_document
-draft: True
+draft: False
 tags: [beer, homebrewing, precision, error propagation]
 image:
   placement: 1
