@@ -11,6 +11,7 @@ image:
   caption: "How Dunedin Gets to Work App"
   focal_point: "Center"
   preview_only: true
+featured: true
 ---
 I recently participated in the [There and Back Again](https://www.stats.govt.nz/2018-census/there-and-back-again-data-visualisation-competition) data visualisation competition from [Stats NZ](https://www.stats.govt.nz/).  I wanted to quickly make a post to feature the app I made, called [How Dunedin Gets to Work](https://campbead.shinyapps.io/HowDunedinGetsToWork/).  This project is meant to be a lightweight app to quickly visualise the modes of transportation people of Dunedin, NZ use to get to work.  I used Leaflet for the mapping components and created the app using R-Shiny.  Source code for this project is available on [GitHub](https://github.com/campbead/HowDunedinGetsToWork). 
 
