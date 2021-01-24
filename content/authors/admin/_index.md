@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: Geospatial Data Analyst
+role: Data Science | Geospatial | Data Storytelling
 
 # Organizations/Affiliations
 organizations:
