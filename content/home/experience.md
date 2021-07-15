@@ -18,6 +18,21 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
+  title = "Kaitātari | Data Analyst"
+  company = "Ministry for the Environment"
+  company_url = "mfe.govt.nz"
+  location = "Wellington, New Zealand (remote)"
+  date_start = "2020-03-01"
+  date_end = ""
+  description = """
+  Responsibilities include:
+  
+  * R/Shiny app development
+  * Statistical analysis
+  * Data engineering and management
+  """
+  
+[[experience]]
   title = "Geospatial Analyst"
   company = "Dunedin City Council"
   company_url = ""
