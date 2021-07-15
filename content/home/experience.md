@@ -35,10 +35,10 @@ date_format = "Jan 2006"
 [[experience]]
   title = "Geospatial Analyst"
   company = "Dunedin City Council"
-  company_url = ""
+  company_url = "https://www.dunedin.govt.nz/"
   location = "Dunedin, New Zealand"
   date_start = "2018-08-01"
-  date_end = ""
+  date_end = "2021-03-01"
   description = """
   Responsibilities include:
   
