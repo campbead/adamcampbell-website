@@ -20,7 +20,7 @@ date_format = "Jan 2006"
 [[experience]]
   title = "Kaitātari | Data Analyst"
   company = "Ministry for the Environment"
-  company_url = "mfe.govt.nz"
+  company_url = "https://environment.govt.nz/"
   location = "Wellington, New Zealand (remote)"
   date_start = "2020-03-01"
   date_end = ""
