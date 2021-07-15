@@ -22,7 +22,7 @@ date_format = "Jan 2006"
   company = "Ministry for the Environment"
   company_url = "https://environment.govt.nz/"
   location = "Wellington, New Zealand (remote)"
-  date_start = "2020-03-01"
+  date_start = "2021-03-01"
   date_end = ""
   description = """
   Responsibilities include:
