@@ -6,6 +6,11 @@ output: html_document
 draft: FALSE
 summary: A deep dive into trends and analysis of the TV's The Chase
 tags: [The Chase, statistics] 
+image:
+  placement: 1
+  caption: "How often players win the Head-to-Head based on Cash Builder performance"
+  focal_point: "Center"
+  preview_only: true
 ---
 
 ## The project
